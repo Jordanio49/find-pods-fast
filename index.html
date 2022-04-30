@@ -1,1 +1,59 @@
-Macy
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Pods Fast!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="row">
+        <div class="col s6">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix"></i>
+              <input type="text" id="autocomplete-input" class="autocomplete">
+              <label for="autocomplete-input">Genre</label>
+            </div>
+          </div>
+        </div>
+      </div>
+            
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var options={
+          data: {
+        "True Crime": null,
+        "Comedy": null,
+        "Arts": null,
+        "Business": null,
+        "Education": null,
+        "Fiction": null,
+        "Government": null,
+        "Health & Fitness": null,
+        "History": null,
+        "Kids & Family": null,
+        "Leisure": null,
+        "Locally Focused": null,
+        "Music": null,
+        "News": null,
+        "Personal Finance": null,
+        "Religion & Spirituality": null,
+        "Science": null,
+        "Society & Culture": null,
+        "Sports": null,
+        "Technology": null,
+        "TV & Film": null,
+          },
+        }
+    var elems = document.querySelectorAll('.autocomplete');
+    var instances = M.Autocomplete.init(elems, options);
+  });
+    </script> 
+</body>
+</html>
