@@ -63,7 +63,7 @@ FLEX:
   
   .grid-container {
     float: right;
-    /* display: grid; */
+    display: grid;
     height: 1300px;
     align-content: center;
     grid-template-columns: auto auto auto;
