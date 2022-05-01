@@ -22,12 +22,14 @@
               <div class="row">
                 <div class="input-field col s12 white">
                   <input type="text" id="autocomplete-input" class="autocomplete">
-                  <!-- <textarea id="textarea1" class="materialize-textarea"></textarea> -->
-                  <label for="textarea1">Genre</label>
-                  <button class="btn waves-effect waves-light s3 pink pulse" type="submit" name="action" id="search-btn">
-                    <i class="small material-icons pink">search</i></button>
+                  <label for="autocomplete-input">Genre</label>
                 </div>
-                
+                <div class="input-field col s12 white">
+                  <input type="text" id="state-input" class="autocomplete2">
+                  <label for="state-input">State</label>
+                </div>
+                <button class="btn waves-effect waves-light s3 pink pulse" type="submit" name="action" id="search-btn">
+                  <i class="small material-icons pink">search</i></button>
               </div>
             </form>
           </div>
@@ -244,7 +246,74 @@
     var elems = document.querySelectorAll('.autocomplete');
     var instances = M.Autocomplete.init(elems, options);
   });
+
+  var stateoptions={
+  data: {
+        "Alabama": null,
+        "Arizona": null,
+        "Arkansas": null,
+        "Deleware": null,
+        "California": null,
+        "Colorado": null,
+        "Alaska": null,
+        "Nevada": null,
+        "Connecticut": null,
+        "Florida": null,
+        "Georgia": null,
+        "Hawaii": null,
+        "Idaho": null,
+        "Illinois": null,
+        "Indiana": null,
+        "Iowa": null,
+        "Kansas": null,
+        "Kentucky": null,
+        "Louisiana": null,
+        "Maine": null,
+        "Maryland": null,
+        "Massachusetts": null,
+        "Michigan": null,
+        "Minnesota": null,
+        "Mississippi": null,
+        "Missouri": null,
+        "Montana": null,
+        "Nebraska": null,
+        "New Hampshire": null,
+        "New Jersey": null,
+        "New Mexico": null,
+        "New York": null,
+        "North Carolina": null,
+        "North Dakota": null,
+        "Ohio": null,
+        "Oklahoma": null,
+        "Oregon": null,
+        "Pennsylvania": null,
+        "Rhode Island": null,
+        "South Carolina": null,
+        "South Dakota": null,
+        "Tennesse": null,
+        "Texas": null,
+        "Utah": null,
+        "Vermont": null,
+        "Virgina": null,
+        "Washington": null,
+        "West Virginia": null,
+        "Wisconsin": null,
+        "Wyoming": null,
+        "Puerto Rico": null,
+        "American Samoa": null,
+        "Guam": null,
+        "Washington DC": null,
+        "Jupiter": null,
+        "Narnia": null,
+        "Gotham": null,
+        "Neverland": null,
+        "Riverddale": null,
+        "South Park": null,
+     }}
+    var elems2 = document.querySelectorAll('.autocomplete2');
+    var instances = M.Autocomplete.init(elems2, stateoptions);
     </script> 
-     <script src="./assets/js/style.js"></script>
+     <script src="./assets/js/style.js">
+     </script>
 </body>
 </html>
