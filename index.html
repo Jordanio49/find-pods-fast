@@ -17,19 +17,28 @@
   <div class="wrapper">
 
     <aside>
+    
       <div class="row">
-        <div class="col s12">
+        <form class="col s12" autocomplete="on">
           <div class="row">
             <div class="input-field col s12">
-              <i class="material-icons prefix"></i>
-              <input type="text" id="autocomplete-input" class="autocomplete">
-              <label for="autocomplete-input">Genre</label>
+              <input type="text" id="autocomplete-input" class="autocomplete"/>
+               <label for="autocomplete-input">Genre</label>
+              <label for="textarea1">Genre</label>
+              <button type="submit" id="search-btn" class="btn-primary content-center" vlaue="search">Search</button>
             </div>
           </div>
-        </div>
+        </form>
       </div>
 
-      <div class="recentsearch"></div>
+
+
+      <div class="recentsearch">
+
+
+      </div>
+
+
     </aside>
 <main>
 <div class="grid-container row">
@@ -37,7 +46,7 @@
     1
     <div class="card small">
       <div class="card-image waves-effect waves-block waves-light">
-        <img class="activator" src="images/office.jpg">
+        <img class="activator" src="">
     </div>
     <div class="card-content">
       <span class="card-title activator grey-text text-darken-4">Podcast Title<i class="material-icons right"></i></span>
@@ -206,7 +215,7 @@
   
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    
-    <script>
+    <!-- <script>
       document.addEventListener('DOMContentLoaded', function() {
         var options={
           data: {
@@ -236,6 +245,7 @@
     var elems = document.querySelectorAll('.autocomplete');
     var instances = M.Autocomplete.init(elems, options);
   });
-    </script> 
+    </script>  -->
+     <script src="./assets/js/style.js"></script>
 </body>
 </html>
