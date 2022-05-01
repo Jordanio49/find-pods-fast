@@ -1,9 +1,8 @@
 
   @media (min-width: 700px) {
     .wrapper {
-       
       display: flex;
-      grid-template-columns: 1200px 1fr;
+      grid-template-columns: 1600px 1fr;
       grid-gap: 16px;
     }
   
@@ -13,28 +12,30 @@
       align-self: start;
     }
   }
+  .color {
+ background-color: #f3c0e4;}
 
-  /* row
-
-  each div would be in the cards and adding column
+  /* row each div would be in the cards and adding column
   breakpoint 992 */
   
-  .grid-container {
+
+
+  /* .grid-container {
     float: right;
-    display: grid;
-    height: 1300px;
+    /* display: grid; */
+    /* height: 1300px;
     align-content: center;
     grid-template-columns: auto auto auto;
     gap: 10px;
     background-color: #f3c0e4;
     padding: 10px;
-  } 
+  }  
 
 
   .grid-container > div {
     background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
-  }
+    padding: 5px;
+
+  }  */ 
 
