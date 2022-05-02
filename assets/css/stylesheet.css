@@ -1,1 +1,78 @@
-Macy
+Macy/* 
+.wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 16px;
+}
+this makes three in a row:
+.grid-container {
+    display: grid;
+    height: 1300px;
+    align-content: center;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    background-color: #f3c0e4;
+    padding: 10px;
+  }  */
+   
+/* 
+FLEX: 
+   .grid-container {
+    display: flex;
+    flex-direction: column;
+    height: 1300px;
+    align-content: center;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    background-color: #f3c0e4;
+    padding: 10px;
+  } 
+  
+    .grid-container {
+    display: flex;
+    flex-direction: column;
+    height: 3800px;
+    align-content: center;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    background-color: #f3c0e4;
+    padding: 10px;
+  }*/
+
+  @media (min-width: 700px) {
+    .wrapper {
+       
+      display: flex;
+      grid-template-columns: 1200px 1fr;
+      grid-gap: 16px;
+    }
+  
+    aside {
+        width: 30%;
+        float: left;
+      align-self: start;
+    }
+  }
+
+  /* row
+  each div would be in the cards and adding column
+  breakpoint 992 */
+  
+  .grid-container {
+    float: right;
+    /* display: grid; */
+    height: 1300px;
+    align-content: center;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    background-color: #f3c0e4;
+    padding: 10px;
+  } 
+
+
+  .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+  }
