@@ -1,27 +1,27 @@
-var searchFormEl = document.getElementById('search-form');
-var searchInputEl = document.getElementById('autocomplete-input');
-var searchBtnEl = document.getElementById('search-btn');
-var searchHistoryEl = document.getElementById('recent-search');
-var favesEl = document.getElementById('faves');
-var stateInputEl = document.getElementById('state-input');
+// var searchFormEl = document.getElementById('search-form');
+// var searchInputEl = document.getElementById('autocomplete-input');
+// var searchBtnEl = document.getElementById('search-btn');
+// var searchHistoryEl = document.getElementById('recent-search');
+// var favesEl = document.getElementById('faves');
+// var stateInputEl = document.getElementById('state-input');
 
-searchBtnEl.addEventListener('click', function(event) {
-    event.preventDefault();
-    var key = searchInputEl.value;
-    var value = stateInputEl.value;
-    console.log(searchInputEl.value)
-    console.log(stateInputEl.value)
-    localStorage.setItem(key, value);
-    JSON.stringify(key);
+// searchBtnEl.addEventListener('click', function(event) {
+//     event.preventDefault();
+//     var key = searchInputEl.value;
+//     var value = stateInputEl.value;
+//     console.log(searchInputEl.value)
+//     console.log(stateInputEl.value)
+//     localStorage.setItem(key, value);
+//     JSON.stringify(key);
     
     
    
-    var listEl = document.createElement('li');
-    listEl.innerHTML = "<div >"
-    listEl.textContent = searchInputEl.value;
-    searchHistoryEl.appendChild(listEl);
+//     var listEl = document.createElement('li');
+//     listEl.innerHTML = "<div >"
+//     listEl.textContent = searchInputEl.value;
+//     searchHistoryEl.appendChild(listEl);
     
-});
+// });
 
 // help from ask bcs to add to 'ur faves'.charAt. no luck tho 😳
 // var favorites = ['genre', 'genre2', 'genre3'];
