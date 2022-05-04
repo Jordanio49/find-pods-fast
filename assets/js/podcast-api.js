@@ -32,7 +32,7 @@ searchBtn.addEventListener('click', (e) => {
 
 
 function getDataFromItunes() {
-    var apiUrl = 'https://itunes.apple.com/search?term=' + searchText.value + '&entity=podcast'
+    var apiUrl = 'https://itunes.apple.com/search?term=' + searchText.value + '&entity=podcast&limit=8'
     fetch(apiUrl)
     .then(data => data.json())
     .then(json => {
