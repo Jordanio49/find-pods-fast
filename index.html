@@ -1,1 +1,301 @@
-Macy
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Pods Fast!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/stylesheet.css">
+</head>
+<body class="pink lighten-4">
+
+  <div class="wrapper">
+
+    <aside>
+      <div class="row">
+        <form class="col s12">
+
+          <div class="row">
+            <form class="col s12" id="search-form">
+              <div class="row">
+                <div class="input-field col s12 white">
+                  <input type="text" id="autocomplete-input" class="autocomplete">
+                  <label for="autocomplete-input">Genre</label>
+                </div>
+                <div class="input-field col s12 white">
+                  <input type="text" id="state-input" class="autocomplete2">
+                  <label for="state-input">State</label>
+                </div>
+                <button class="btn waves-effect waves-light s3 pink pulse" type="submit" name="action" id="search-btn">
+                  <i class="small material-icons pink">search</i></button>
+              </div>
+            </form>
+          </div>
+        </form>
+      </div>
+
+      <div class="recent-search pink lighten-5" id="recent-search">
+         <h5><span id="faves"> ur f a v e s</span></h5>
+          
+      </div>
+    </aside>
+
+<main>
+<div class="row">
+
+  <div class="col s12 m6 l3 pink accent-1">
+    1
+    <div class="card medium pink lighten-5">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img id="image-1" class="activator">
+    </div>
+    <div class="card-content">
+      <p><a id="pod-link-1" target="_blank">Apple Podcast Link</a></p>
+      <span id="title-1" class="card-title activator grey-text text-darken-4">Podcast Title<i class="material-icons right"></i></span>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Description<i class="material-icons right">close</i></span>
+      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+      <p> <a href="#">Ticket Link</a> <span>Dates</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 m6 l3 pink accent-1">
+    2
+    <div class="card medium pink lighten-5">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img id="image-2" class="activator">
+    </div>
+    <div class="card-content">
+      <p><a id="pod-link-2" target="_blank">Apple Podcast link</a></p>
+      <span id="title-2" class="card-title activator grey-text text-darken-4">Podcast Title<i class="material-icons right"></i></span>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">LIVE SHOW<i class="material-icons right">close</i></span>
+      <p>TRUE FALSE?</p>
+      <p> <a href="#">Event Link</a> <span>Dates</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 m6 l3 pink accent-1">
+    3
+    <div class="card medium pink lighten-5">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img id="image-3" class="activator">
+    </div>
+    <div class="card-content">
+      <p><a id="pod-link-3" target="_blank">Apple Podcast link</a></p>
+      <span id="title-3" class="card-title activator grey-text text-darken-4">Podcast Title<i class="material-icons right"></i></span>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Description<i class="material-icons right">close</i></span>
+      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+      <p> <a href="#">Ticket Link</a> <span>Dates</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 m6 l3 pink accent-1">
+    4
+    <div class="card medium pink lighten-5">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img id="image-4" class="activator">
+    </div>
+    <div class="card-content">
+      <p><a id="pod-link-4" target="_blank">Apple  link</a></p>
+      <span id="title-4" class="card-title activator grey-text text-darken-4">Podcast Title<i class="material-icons right"></i></span>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Description<i class="material-icons right">close</i></span>
+      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+      <p> <a href="#">Ticket Link</a> <span>Dates</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 m6 l3 pink accent-1">
+    5
+    <div class="card medium pink lighten-5">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img id="image-5" class="activator">
+    </div>
+    <div class="card-content">
+      <p><a id="pod-link-5" target="_blank">Apple Podcast link</a></p>
+      <span id="title-5" class="card-title activator grey-text text-darken-4">Podcast Title<i class="material-icons right"></i></span>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Description<i class="material-icons right">close</i></span>
+      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+      <p> <a href="#">Ticket Link</a> <span>Dates</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 m6 l3 pink accent-1">
+    6
+    <div class="card medium pink lighten-5">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img id="image-6" class="activator">
+    </div>
+    <div class="card-content">
+      <p><a id="pod-link-6" target="_blank">Apple Podcast link</a></p>
+      <span id="title-6" class="card-title activator grey-text text-darken-4">Podcast Title<i class="material-icons right"></i></span>
+    </div>
+    <div class="card-reveal pink lighten-5 pink accent-1">
+      <span class="card-title grey-text text-darken-4">Description<i class="material-icons right">close</i></span>
+      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+      <p> <a href="#">Ticket Link</a> <span>Dates</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 m6 l3 pink accent-1">
+    7
+    <div class="card medium pink lighten-5">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img id="image-7" class="activator">
+    </div>
+    <div class="card-content">
+      <p><a id="pod-link-7" target="_blank">Apple Podcast link</a></p>
+      <span id="title-7" class="card-title activator grey-text text-darken-4">Podcast Title<i class="material-icons right"></i></span>
+    </div>
+    <div class="card-reveal pink lighten-5">
+      <span class="card-title grey-text text-darken-4">Description<i class="material-icons right">close</i></span>
+      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+      <p> <a href="#">Ticket Link</a> <span>Dates</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 m6 l3 pink accent-1">
+    8
+    <div class="card medium pink lighten-5">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img id="image-8" class="activator">
+    </div>
+    <div class="card-content">
+      <p><a id="pod-link-8" target="_blank">Apple Podcast link</a></p>
+      <span id="title-8" class="card-title activator grey-text text-darken-4">Podcast Title<i class="material-icons right"></i></span>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Description<i class="material-icons right">close</i></span>
+      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+      <p> <a href="#">Ticket Link</a> <span>Dates</span></p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</main>
+
+  </div>
+    
+        
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var options={
+          data: {
+        "True Crime": null,
+        "Comedy": null,
+        "Arts": null,
+        "Business": null,
+        "Education": null,
+        "Fiction": null,
+        "Government": null,
+        "Health & Fitness": null,
+        "History": null,
+        "Kids & Family": null,
+        "Leisure": null,
+        "Locally Focused": null,
+        "Music": null,
+        "News": null,
+        "Personal Finance": null,
+        "Religion & Spirituality": null,
+        "Science": null,
+        "Society & Culture": null,
+        "Sports": null,
+        "Technology": null,
+        "TV & Film": null,
+          },
+        }
+    var elems = document.querySelectorAll('.autocomplete');
+    var instances = M.Autocomplete.init(elems, options);
+  });
+
+  var stateoptions={
+  data: {
+        "Alabama": null,
+        "Arizona": null,
+        "Arkansas": null,
+        "Deleware": null,
+        "California": null,
+        "Colorado": null,
+        "Alaska": null,
+        "Nevada": null,
+        "Connecticut": null,
+        "Florida": null,
+        "Georgia": null,
+        "Hawaii": null,
+        "Idaho": null,
+        "Illinois": null,
+        "Indiana": null,
+        "Iowa": null,
+        "Kansas": null,
+        "Kentucky": null,
+        "Louisiana": null,
+        "Maine": null,
+        "Maryland": null,
+        "Massachusetts": null,
+        "Michigan": null,
+        "Minnesota": null,
+        "Mississippi": null,
+        "Missouri": null,
+        "Montana": null,
+        "Nebraska": null,
+        "New Hampshire": null,
+        "New Jersey": null,
+        "New Mexico": null,
+        "New York": null,
+        "North Carolina": null,
+        "North Dakota": null,
+        "Ohio": null,
+        "Oklahoma": null,
+        "Oregon": null,
+        "Pennsylvania": null,
+        "Rhode Island": null,
+        "South Carolina": null,
+        "South Dakota": null,
+        "Tennesse": null,
+        "Texas": null,
+        "Utah": null,
+        "Vermont": null,
+        "Virgina": null,
+        "Washington": null,
+        "West Virginia": null,
+        "Wisconsin": null,
+        "Wyoming": null,
+        "Puerto Rico": null,
+        "American Samoa": null,
+        "Guam": null,
+        "Washington DC": null,
+        "Jupiter": null,
+        "Narnia": null,
+        "Gotham": null,
+        "Neverland": null,
+        "Riverddale": null,
+        "South Park": null,
+     }}
+    var elems2 = document.querySelectorAll('.autocomplete2');
+    var instances = M.Autocomplete.init(elems2, stateoptions);
+    </script> 
+    <!-- <script src="./assets/js/style.js"></script> -->
+    <script src="./assets/js/podcast-api.js"></script>
+</body>
+</html>
