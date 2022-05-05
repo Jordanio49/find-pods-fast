@@ -8,10 +8,8 @@ searchBtn.addEventListener('click', (event) => {
     getDataFromItunes(event);
 });
 
-// itunes API for pod info 
-
+// itunes API for pod cards
 function getDataFromItunes(event) {
-       
                 var apiUrl = 'https://itunes.apple.com/search?term=' + searchText.value + '&entity=podcast&limit=8'
                     fetch(apiUrl)
                  .then(data => data.json())
@@ -46,7 +44,7 @@ function getDataFromItunes(event) {
                 } else { 
                 }
 
-                //this is for the tickmaster API
+                //this is for the tickmaster API i commented this out because i wanted all the cards to populate
                 // $.ajax({
                 //     type: "GET",
                 //     url: "https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=hVqnL1G7fRfOFT0cqthaFdUpZ5C4mZJ8&size=100&keyword=" + podcastTitles,
@@ -71,8 +69,7 @@ function getDataFromItunes(event) {
     }
     
 
-//need to save one search at a time and not 7. this is adding multiple buttons.. i think
-
+//need to save one search  in ls at a time and not 7
 let storeGenre = JSON.parse(localStorage.getItem('genre')) || [];
 
 for (let i = 0; i < storeGenre.length; i++) {
