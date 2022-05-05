@@ -34,11 +34,11 @@ function getDataFromItunes() {
                         console.log(json);
                         // for (let i = 0; i < json._embedded.attractions.length; i++) {
                             var livePodcasts = json._embedded.attractions[0].name
-                            var ticketUrl = json._embedded.attractions[0].url
+                            
                             console.log(livePodcasts)
-                            console.log(ticketUrl)
+                            
                             if (livePodcasts) {
-                                upcomingShows.innerHTML = "There are Upcoming Shows!"
+                                upcomingShows.innerHTML = "There are Upcoming Shows! Check Ticket Master for more info."
                                 console.log(ticketUrl)
                             }
                             else{
