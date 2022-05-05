@@ -32,19 +32,15 @@ function getDataFromItunes() {
                     dataType: "json",
                     success: function (json) {
                         console.log(json);
-                        // for (let i = 0; i < json._embedded.attractions.length; i++) {
                             var livePodcasts = json._embedded.attractions[0].name
-                            
                             console.log(livePodcasts)
                             
                             if (livePodcasts) {
                                 upcomingShows.innerHTML = "There are Upcoming Shows! Check Ticket Master for more info."
-                                console.log(ticketUrl)
                             }
                             else{
                                 upcomingShows.innerHTML = "There are no shows Upcoming"
                             }
-                        // }
                     }
                 })
             }
