@@ -3,12 +3,13 @@ var searchText = document.getElementById('autocomplete-input')
 
 searchBtn.addEventListener('click', (e) => {
     e.preventDefault()
-    getApiData()
+    getApiData();
+    checkLiveEvents();
 })
 
+var podcastTitles = []
+var showTitles = []
 function getApiData() {
-    var podcastTitles = []
-    var showTitles = []
 
     var appleApiUrl = 'https://itunes.apple.com/search?term=' + searchText.value + '&entity=podcast&limit=8'
     fetch(appleApiUrl)
@@ -29,20 +30,24 @@ function getApiData() {
             }
         })
 
-        console.log(podcastTitles)
-        var ticketmasterApiUrl = "https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=hVqnL1G7fRfOFT0cqthaFdUpZ5C4mZJ8&size=100&classificationName=podcast"
-        fetch(ticketmasterApiUrl)
-            .then(data => data.json())
-            .then(json => {
-                // console.log(json)
-                for (let i = 0; i < json._embedded.attractions.length; i++) {
-                    showTitles.push(json._embedded.attractions[i].name)
-                }
-            })
-            console.log(showTitles)
+    console.log(podcastTitles)
+    var ticketmasterApiUrl = "https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=hVqnL1G7fRfOFT0cqthaFdUpZ5C4mZJ8&size=100&classificationName=podcast"
+    fetch(ticketmasterApiUrl)
+        .then(data => data.json())
+        .then(json => {
+            // console.log(json)
+            for (let i = 0; i < json._embedded.attractions.length; i++) {
+                showTitles.push(json._embedded.attractions[i].name)
+            }
+        })
+    console.log(showTitles)
 
-           for (i = 0; i < showTitles.length; i++) {
-            if (showTitles[i] == podcastTitles[3])
-                console.log('It works')
-           }
+};
+
+function checkLiveEvents() {
+    for (i = 0; i < showTitles.length; i++) {
+        // console.log('this is working')
+        if (showTitles[i] == podcastTitles[3])
+            console.log('It works')
+    }
 };
