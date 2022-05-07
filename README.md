@@ -25,10 +25,10 @@ Find Pods Fast is a page that can be used to search for podcasts by genre. Upon 
 5. Johnson contributed to group discussions and took the lead on the organizing the slide deck and presentation elements.
 
 ## Deployed URL
-
+https://jordanio49.github.io/find-pods-fast/
 
 ## Github Repository
-
+https://github.com/Jordanio49/find-pods-fast
 
 ## Powerpoint Link
 https://docs.google.com/presentation/d/1b2NGbuQaH4ukCpB_5pev-AwlZhlD0MYDsGzbEPtO-vo/edit#slide=id.g12687f22ec8_0_125
