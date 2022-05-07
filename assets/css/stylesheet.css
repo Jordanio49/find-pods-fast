@@ -1,1 +1,24 @@
-Macy
+
+  @media (min-width: 500px) {
+    .wrapper {
+      display: flex;
+      grid-template-columns: 100px 1fr;
+      grid-gap: 20px;
+    }
+  
+    /* keeps search bar loud and proud */
+    aside {
+        width: 50%;
+        float: left;
+      align-self: start;
+    }
+    
+  }
+
+
+
+
+
+
+
+
