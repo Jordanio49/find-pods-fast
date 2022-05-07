@@ -1,4 +1,3 @@
-
 var searchBtn = document.getElementById('search-btn');
 var searchText = document.getElementById('autocomplete-input')
 var searchHistoryEl = document.getElementById('recent-search')
@@ -10,6 +9,7 @@ searchBtn.addEventListener('click', (event) => {
 
 // itunes API for pod cards
 function getDataFromItunes(event) {
+
                 var apiUrl = 'https://itunes.apple.com/search?term=' + searchText.value + '&entity=podcast&limit=8'
                     fetch(apiUrl)
                  .then(data => data.json())
@@ -34,6 +34,7 @@ function getDataFromItunes(event) {
                   localStorage.setItem('genre', JSON.stringify(storeGenre));
                   if (storeGenre.includes(genre) == true) {
                     var btn = document.createElement('button');
+                    btn.className += ' waves-effect waves-light btn purple accent-1';
                     btn.innerText = genre;
                     btn.value = genre;
                     btn.addEventListener('click', getDataFromItunes);
@@ -74,7 +75,7 @@ let storeGenre = JSON.parse(localStorage.getItem('genre')) || [];
 
 for (let i = 0; i < storeGenre.length; i++) {
     var btn = document.createElement("button");
-    btn.className += ' color';
+    btn.className += ' waves-effect waves-light btn purple accent-1';
     btn.innerText = storeGenre[i];
     btn.value = storeGenre[i];
     btn.addEventListener('click', getDataFromItunes)
@@ -82,4 +83,3 @@ for (let i = 0; i < storeGenre.length; i++) {
     var br = document.createElement("br");
     searchHistoryEl.appendChild(br);
 }
-
