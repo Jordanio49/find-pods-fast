@@ -62,6 +62,7 @@ function getApiData() {
       var btn = document.createElement("button");
       btn.className += " waves-effect waves-light btn purple accent-1";
       btn.id += "toggle";
+      console.log(btn.id);
       btn.innerText = genre;
       btn.value = genre;
       searchHistoryEl.appendChild(btn);
