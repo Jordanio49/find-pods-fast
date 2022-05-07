@@ -6,6 +6,7 @@
       grid-gap: 20px;
     }
   
+    /* keeps search bar loud and proud */
     aside {
         width: 50%;
         float: left;
@@ -13,6 +14,7 @@
     }
     
   }
+
 
 
 
