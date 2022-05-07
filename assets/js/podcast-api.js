@@ -1,14 +1,14 @@
 var searchBtn = document.getElementById('search-btn');
 var searchText = document.getElementById('autocomplete-input')
 var searchHistoryEl = document.getElementById('recent-search')
-var toggle = document.getElementById('toggle')
+
 
 searchBtn.addEventListener('click', (event) => {
     event.preventDefault();
     getDataFromItunes(event);
 });
 
-// itunes API for pod cards
+// function calls itunes API for pod cards, saves seach to local storage, and creates button dynamically
 function getDataFromItunes(event) {
 
                 var apiUrl = 'https://itunes.apple.com/search?term=' + searchText.value + '&entity=podcast&limit=8'
@@ -24,14 +24,14 @@ function getDataFromItunes(event) {
                 var image = document.getElementById('image-' + [i])
                 title.textContent = podcastTitles
                 link.setAttribute('href', podcastLinks)
-                image.setAttribute('src', podcastImages)
-
-     //heres the buttons!
+                image.setAttribute('src', podcastImages)                    
             }
+
+            //heres the buttons!
             var genre;
             if (searchText.value != "" ) {
               genre = searchText.value;
-console.log(storeGenre.includes(genre))
+                console.log(storeGenre.includes(genre))
 
               if (storeGenre.includes(genre) !== true) {
                 storeGenre.push(genre);
@@ -45,16 +45,14 @@ console.log(storeGenre.includes(genre))
                 var br = document.createElement('br');
                 searchHistoryEl.appendChild(br);
               }
-            } else { 
             }
         })
     }
     
-
 // getting data from local 
 let storeGenre = JSON.parse(localStorage.getItem('genre')) || [];
 
-// forloop thats global and runs when page loads
+// forloop global and runs when page loads
 for (let i = 0; i < storeGenre.length; i++) {
     var btn = document.createElement("button");
     btn.className += ' waves-effect waves-light btn purple accent-1';
@@ -67,41 +65,32 @@ for (let i = 0; i < storeGenre.length; i++) {
 }
 
 
-// var stringFromLocal = window.localStorage.getItem('genre');
-// var parseValueFromString= JSON.parse(stringFromLocal);
-// var array = parseValueFromString || [];
-// var value = searchText.value;
-// if(array.indexOf(value) == -1){
-//     array.push(value);
-//     var stringRepresentArray = JSON.stringify(array);
-//     window.localStorage.setItem("genre", str)
-// }
-
-
 // trying to get toggle to change cards :(
+ var toggle = document.getElementById('toggle')
 
-// toggle.addEventListener('click', (e) => {
-//     getDataFromItunes(e);
-// });
+toggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    buttonGet(e);
+});
 
-// function buttonGet() {
-//     var apiUrl = 'https://itunes.apple.com/search?term=' + searchText.value + '&entity=podcast&limit=8'
-//         fetch(apiUrl)
-//      .then(data => data.json())
-//      .then(json => {
-// for (let i = 0; i < json.results.length; i++) {
-//     var podcastTitles = json.results[i].collectionName;
-//     var podcastLinks = json.results[i].collectionViewUrl;
-//     var podcastImages = json.results[i].artworkUrl600;
-//     var title = document.getElementById('title-' + [i])
-//     var link = document.getElementById('pod-link-' + [i])
-//     var image = document.getElementById('image-' + [i])
-//     title.textContent = podcastTitles
-//     link.setAttribute('href', podcastLinks)
-//     image.setAttribute('src', podcastImages)
-//         }
-//     })
-// }
+function buttonGet(e) {
+    var apiUrl = 'https://itunes.apple.com/search?term=' + btn.innerText + '&entity=podcast&limit=8'
+        fetch(apiUrl)
+     .then(data => data.json())
+     .then(json => {
+for (let i = 0; i < json.results.length; i++) {
+    var podcastTitles = json.results[i].collectionName;
+    var podcastLinks = json.results[i].collectionViewUrl;
+    var podcastImages = json.results[i].artworkUrl600;
+    var title = document.getElementById('title-' + [i])
+    var link = document.getElementById('pod-link-' + [i])
+    var image = document.getElementById('image-' + [i])
+    title.textContent = podcastTitles
+    link.setAttribute('href', podcastLinks)
+    image.setAttribute('src', podcastImages)
+        }
+    })
+}
 
 
 
