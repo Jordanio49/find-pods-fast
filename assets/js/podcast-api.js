@@ -27,51 +27,34 @@ function getDataFromItunes(event) {
                 image.setAttribute('src', podcastImages)
 
      //heres the buttons!
-                var genre;
-                if (searchText.value != '') {
-                  genre = searchText.value;
-                  storeGenre.push(genre);
-                  localStorage.setItem('genre', JSON.stringify(storeGenre));
-                  if (storeGenre.includes(genre) == true) {
-                    var btn = document.createElement('button');
-                    btn.className += ' waves-effect waves-light btn purple accent-1';
-                    btn.id += 'toggle'
-                    btn.innerText = genre;
-                    btn.value = genre;
-                    searchHistoryEl.appendChild(btn);
-                    var br = document.createElement('br');
-                    searchHistoryEl.appendChild(br);
-                  }
-                } else { 
-                }
-        //this is for the tickmaster API i commented this out because i wanted all the cards to populate
-                // $.ajax({
-                //     type: "GET",
-                //     url: "https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=hVqnL1G7fRfOFT0cqthaFdUpZ5C4mZJ8&size=100&keyword=" + podcastTitles,
-                //     async: true,
-                //     dataType: "json",
-                //     // success: function (json) {
-                //     //     console.log(json);
-                //     //         var livePodcasts = json._embedded.attractions[0].name
-                //     //         console.log(livePodcasts)
-                            
-                //     //         // if (livePodcasts) {
-                //     //         //     upcomingShows.innerHTML = "There are Upcoming Shows! Check Ticket Master for more info."
-                //     //         // }
-                //     //         // else {
-                //     //         //     upcomingShows.innerHTML = "There are no shows Upcoming"
-                //     //         // }
-                //     // }
-                // })
             }
+            var genre;
+            if (searchText.value != "" ) {
+              genre = searchText.value;
+console.log(storeGenre.includes(genre))
 
+              if (storeGenre.includes(genre) !== true) {
+                storeGenre.push(genre);
+                localStorage.setItem('genre', JSON.stringify(storeGenre));
+                var btn = document.createElement('button');
+                btn.className += ' waves-effect waves-light btn purple accent-1';
+                btn.id += 'toggle'
+                btn.innerText = genre;
+                btn.value = genre;
+                searchHistoryEl.appendChild(btn);
+                var br = document.createElement('br');
+                searchHistoryEl.appendChild(br);
+              }
+            } else { 
+            }
         })
     }
     
 
-//need to save one search  in ls at a time and not 7
+// getting data from local 
 let storeGenre = JSON.parse(localStorage.getItem('genre')) || [];
 
+// forloop thats global and runs when page loads
 for (let i = 0; i < storeGenre.length; i++) {
     var btn = document.createElement("button");
     btn.className += ' waves-effect waves-light btn purple accent-1';
@@ -84,8 +67,15 @@ for (let i = 0; i < storeGenre.length; i++) {
 }
 
 
-
-
+// var stringFromLocal = window.localStorage.getItem('genre');
+// var parseValueFromString= JSON.parse(stringFromLocal);
+// var array = parseValueFromString || [];
+// var value = searchText.value;
+// if(array.indexOf(value) == -1){
+//     array.push(value);
+//     var stringRepresentArray = JSON.stringify(array);
+//     window.localStorage.setItem("genre", str)
+// }
 
 
 // trying to get toggle to change cards :(
@@ -106,10 +96,32 @@ for (let i = 0; i < storeGenre.length; i++) {
 //     var title = document.getElementById('title-' + [i])
 //     var link = document.getElementById('pod-link-' + [i])
 //     var image = document.getElementById('image-' + [i])
-//     // var upcomingShows = document.getElementById('upcoming-shows-' + [i])
 //     title.textContent = podcastTitles
 //     link.setAttribute('href', podcastLinks)
 //     image.setAttribute('src', podcastImages)
 //         }
 //     })
 // }
+
+
+
+
+        //this is for the tickmaster API i commented this out because i wanted all the cards to populate
+                // $.ajax({
+                //     type: "GET",
+                //     url: "https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=hVqnL1G7fRfOFT0cqthaFdUpZ5C4mZJ8&size=100&keyword=" + podcastTitles,
+                //     async: true,
+                //     dataType: "json",
+                //     // success: function (json) {
+                //     //     console.log(json);
+                //     //         var livePodcasts = json._embedded.attractions[0].name
+                //     //         console.log(livePodcasts)
+                            
+                //     //         // if (livePodcasts) {
+                //     //         //     upcomingShows.innerHTML = "There are Upcoming Shows! Check Ticket Master for more info."
+                //     //         // }
+                //     //         // else {
+                //     //         //     upcomingShows.innerHTML = "There are no shows Upcoming"
+                //     //         // }
+                //     // }
+                // })
