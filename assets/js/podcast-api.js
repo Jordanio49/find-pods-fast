@@ -17,7 +17,6 @@ function getApiData() {
         .then(json => {
             for (let i = 0; i < json.results.length; i++) {
                 podcastTitles.push(json.results[i].collectionName);
-                // podcastTitles = json.results[i].collectionName;
                 var podcastLinks = json.results[i].collectionViewUrl;
                 var podcastImages = json.results[i].artworkUrl600;
                 var title = document.getElementById('title-' + [i])
@@ -27,7 +26,7 @@ function getApiData() {
                 link.setAttribute('href', podcastLinks)
                 image.setAttribute('src', podcastImages)
             }
-            console.log(podcastTitles)
+            // console.log(podcastTitles)
             var ticketmasterApiUrl = "https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=hVqnL1G7fRfOFT0cqthaFdUpZ5C4mZJ8&size=100&classificationName=podcast"
             fetch(ticketmasterApiUrl)
                 .then(data => data.json())
@@ -36,7 +35,7 @@ function getApiData() {
                     for (let i = 0; i < json._embedded.attractions.length; i++) {
                         showTitles.push(json._embedded.attractions[i].name)
                     }
-                    console.log(showTitles)
+                    // console.log(showTitles)
                     checkLiveEvents();
                     podcastTitles = []
                     showTitles = []
@@ -50,7 +49,7 @@ function checkLiveEvents() {
             var upcomingShows = document.getElementById('upcoming-shows-' + [j])
             if (showTitles[i] === podcastTitles[j]) {
                 upcomingShows.textContent = ('There are upcoming live events! Check ticketmaster for more details.')
-                console.log('Found shows')
+                // console.log('Found shows')
                 return;
             }
             upcomingShows.textContent = 'Unfortunately there are no scheduled live events'
