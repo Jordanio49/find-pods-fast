@@ -82,11 +82,11 @@ function checkLiveEvents() {
         console.log("Found shows");
         return;
       }
-      else {
+      
       upcomingShows.textContent =
         "Unfortunately there are no scheduled live events";
 //       reveal.classList.add('grey', 'lighten-1');
-      }
+      
     }
   }
 }
