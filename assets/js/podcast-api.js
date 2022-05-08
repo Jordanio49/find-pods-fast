@@ -74,7 +74,7 @@ function checkLiveEvents() {
   for (i = 0; i < showTitles.length; i++) {
     for (j = 0; j < podcastTitles.length; j++) {
       var upcomingShows = document.getElementById("upcoming-shows-" + [j]);
-//       var reveal = document.getElementById("reveal-" +[j]);
+//       var reveal = document.getElementById("reveal-" +[j]); 
       if (showTitles[i] === podcastTitles[j]) {
 //           reveal.classList.add('green', 'accent-2');
         upcomingShows.textContent =
@@ -86,7 +86,7 @@ function checkLiveEvents() {
       upcomingShows.textContent =
         "Unfortunately there are no scheduled live events";
 //       reveal.classList.add('grey', 'lighten-1');
-        
+      }
     }
   }
 }
@@ -107,7 +107,7 @@ for (let i = 0; i < storeGenre.length; i++) {
 }
 
 
-function buttonGet() {
+function buttonGet(event) {
     var appleApiUrl =
     "https://itunes.apple.com/search?term=" +
     btn.innerText +
