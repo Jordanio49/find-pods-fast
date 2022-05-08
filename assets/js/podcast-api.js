@@ -76,9 +76,9 @@ function checkLiveEvents() {
       var upcomingShows = document.getElementById("upcoming-shows-" + [j]);
 //       var reveal = document.getElementById("reveal-" +[j]); 
       if (showTitles[i] === podcastTitles[j]) {
-//           reveal.classList.add('green', 'accent-2');
         upcomingShows.textContent =
           "There are upcoming live events! Check ticketmaster for more details.";
+//          reveal.classList.add('green', 'accent-2');
         console.log("Found shows");
         return;
       }
@@ -110,7 +110,7 @@ for (let i = 0; i < storeGenre.length; i++) {
 function buttonGet(event) {
     var appleApiUrl =
     "https://itunes.apple.com/search?term=" +
-    btn.innerText +
+    event.target.value +
     "&entity=podcast&limit=8";
   fetch(appleApiUrl)
     .then((data) => data.json())
