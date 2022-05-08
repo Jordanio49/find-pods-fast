@@ -24,7 +24,6 @@ function getApiData() {
     .then((json) => {
       for (let i = 0; i < json.results.length; i++) {
         podcastTitles.push(json.results[i].collectionName);
-        // podcastTitles = json.results[i].collectionName;
         var podcastLinks = json.results[i].collectionViewUrl;
         var podcastImages = json.results[i].artworkUrl600;
         var title = document.getElementById("title-" + [i]);
@@ -40,7 +39,6 @@ function getApiData() {
       fetch(ticketmasterApiUrl)
         .then((data) => data.json())
         .then((json) => {
-          // console.log(json)
           for (let i = 0; i < json._embedded.attractions.length; i++) {
             showTitles.push(json._embedded.attractions[i].name);
           }
@@ -61,10 +59,9 @@ function getApiData() {
       localStorage.setItem("genre", JSON.stringify(storeGenre));
       var btn = document.createElement("button");
       btn.className += " waves-effect waves-light btn purple accent-1";
-      btn.id += "toggle";
-      console.log(btn.id);
       btn.innerText = genre;
       btn.value = genre;
+      btn.addEventListener('click', buttonGet);
       searchHistoryEl.appendChild(btn);
       var br = document.createElement("br");
       searchHistoryEl.appendChild(br);
@@ -77,14 +74,19 @@ function checkLiveEvents() {
   for (i = 0; i < showTitles.length; i++) {
     for (j = 0; j < podcastTitles.length; j++) {
       var upcomingShows = document.getElementById("upcoming-shows-" + [j]);
+//       var reveal = document.getElementById("reveal-" +[j]);
       if (showTitles[i] === podcastTitles[j]) {
+//           reveal.classList.add('green', 'accent-2');
         upcomingShows.textContent =
           "There are upcoming live events! Check ticketmaster for more details.";
         console.log("Found shows");
         return;
       }
+      else {
       upcomingShows.textContent =
         "Unfortunately there are no scheduled live events";
+//       reveal.classList.add('grey', 'lighten-1');
+        
     }
   }
 }
@@ -96,22 +98,14 @@ let storeGenre = JSON.parse(localStorage.getItem("genre")) || [];
 for (let i = 0; i < storeGenre.length; i++) {
   var btn = document.createElement("button");
   btn.className += " waves-effect waves-light btn purple accent-1";
-  btn.id += "toggle";
   btn.innerText = storeGenre[i];
   btn.value = storeGenre[i];
+  btn.addEventListener('click', buttonGet);
   searchHistoryEl.appendChild(btn);
   var br = document.createElement("br");
   searchHistoryEl.appendChild(br);
 }
 
-// togglebutton functionality 
-
-var toggle = document.getElementById('toggle')
-
-toggle.addEventListener('click', (e) => {
-    e.preventDefault();
-    buttonGet();
-});
 
 function buttonGet() {
     var appleApiUrl =
