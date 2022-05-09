@@ -74,18 +74,19 @@ function checkLiveEvents() {
   for (i = 0; i < showTitles.length; i++) {
     for (j = 0; j < podcastTitles.length; j++) {
       var upcomingShows = document.getElementById("upcoming-shows-" + [j]);
-//       var reveal = document.getElementById("reveal-" +[j]); 
+      var reveal = document.getElementById("reveal-" +[j]); 
       if (showTitles[i] === podcastTitles[j]) {
         upcomingShows.textContent =
           "There are upcoming live events! Check ticketmaster for more details.";
-//          reveal.classList.add('green', 'accent-2');
+         reveal.classList.add('green', 'accent-2');
+          reveal.classList.remove('grey', 'lighten-1');
         console.log("Found shows");
         return;
       }
       else {
       upcomingShows.textContent =
         "Unfortunately there are no scheduled live events";
-//       reveal.classList.add('grey', 'lighten-1');
+      reveal.classList.add('grey', 'lighten-1');
       }
     }
   }
